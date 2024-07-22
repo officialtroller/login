@@ -10,25 +10,51 @@
 </head>
 
 <body>
-    <div class="header">
+    <!--<div class="header">
         <header>Website</header>
-    </div>
+    </div>-->
     <div class="content-wrapper">
         <div class="content">
-            <div class="button">
+            <div id="loginForm" class="form-container">
+                <h2>Login</h2>
                 <div class="inputs">
-                    <i id="emailname">E-Mail</i>
-                    <br>
-                    <input type="email" name="user_email" id="email" placeholder="example@email.com">
-                    <br>
-                    <i id="passwordname">Password</i>
-                    <br>
-                    <div class="password-field">
-                        <input type="password" name="user_password" id="password" placeholder="Example">
-                        <i class="fa fa-eye password-toggle"></i>
-                    </div>
+                    <input class="email" type="email" name="user_email" id="email" placeholder="Email">
+                    <input class="password" type="password" name="user_password" id="password" placeholder="Password">
+                    <i class="fa fa-eye"></i>
                 </div>
-                <button>LOGIN</button>
+                <button id="loginButton">LOGIN</button>
+                <div class="nav-links">
+                    <a href="#/register">Register</a>
+                    <a href="#/delete-account">Delete Account</a>
+                </div>
+            </div>
+
+            <div id="registerForm" class="form-container hidden">
+                <h2>Register</h2>
+                <div class="inputs">
+                    <input class="email" type="email" id="registerEmail" placeholder="Email">
+                    <input class="password" type="password" id="registerPassword" placeholder="Password">
+                    <i class="fa fa-eye"></i>
+                </div>
+                <button id="registerButton">Register</button>
+                <div class="nav-links">
+                    <a href="#">Login</a>
+                    <a href="#/delete-account">Delete Account</a>
+                </div>
+            </div>
+
+            <div id="deleteAccountForm" class="form-container hidden">
+                <h2>Delete Account</h2>
+                <div class="inputs">
+                    <input class="email" type="email" id="deleteEmail" placeholder="Email">
+                    <input class="password" type="password" id="deletePassword" placeholder="Password">
+                    <i class="fa fa-eye"></i>
+                </div>
+                <button id="deleteAccountButton">Delete</button>
+                <div class="nav-links">
+                    <a href="#">Login</a>
+                    <a href="#/register">Register</a>
+                </div>
             </div>
         </div>
     </div>
