@@ -63,14 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const deleteAccountForm = document.getElementById('deleteAccountForm');
-    const Header = document.querySelector(".header header");
-    Header !== null && (console.log("Header found"))
 
     const loginButton = document.getElementById('loginButton');
     const registerButton = document.getElementById('registerButton');
     const deleteAccountButton = document.getElementById('deleteAccountButton');
-
-    // Routing function
     function handleRoute() {
         const hash = window.location.hash;
         loginForm.classList.add('hidden');
@@ -79,20 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (hash === '#/register') {
             registerForm.classList.remove('hidden');
-            Header.innerText = "Register";
         } else if (hash === '#/delete-account') {
             deleteAccountForm.classList.remove('hidden');
-            Header.innerText = "Delete Account";
         } else {
             loginForm.classList.remove('hidden');
-            Header.innerText = "Login";
         }
     }
-
-    // Initial route handling
     handleRoute();
-
-    // Listen for hash changes
     window.addEventListener('hashchange', handleRoute);
 
     loginButton.addEventListener('click', async () => {
@@ -100,21 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         try {
-            const response = await fetch('http://localhost:3000/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert(data.message);
-            } else {
-                alert(data.message);
-            }
+            //logic here...
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred. Please try again.');
@@ -126,22 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('registerPassword').value;
 
         try {
-            const response = await fetch('http://localhost:3000/api/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert(data.message); // Registration successful
-                window.location.hash = ''; // Redirect to login page
-            } else {
-                alert(data.message); // Show error message
-            }
+            //logic here...
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred. Please try again.');
@@ -153,22 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('deletePassword').value;
 
         try {
-            const response = await fetch('http://localhost:3000/api/delete-account', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert(data.message); // Account deletion successful
-                window.location.hash = ''; // Redirect to login page
-            } else {
-                alert(data.message); // Show error message
-            }
+            //logic here...
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred. Please try again.');
