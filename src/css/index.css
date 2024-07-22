@@ -1,0 +1,154 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./img/wald.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.header {
+    position: relative;
+    padding: 20px;
+    font-size: 6vb;
+    color: #777;
+    text-shadow: 0 0 4px white;
+    user-select: none;
+    z-index: 1;
+    text-align: center;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    position: relative;
+    width: 30%;
+    min-width: 250px;
+    height: 50vh;
+    background-color: rgba(187, 187, 187, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inputs input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all .2s linear;
+    position: relative;
+}
+
+.inputs input:focus {
+    outline: none;
+    box-shadow: 0 0 10px aqua;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.password-field input {
+    flex: 1;
+    padding-right: 30px;
+    /* Platz für das Augensymbol */
+    border-radius: 10px;
+}
+
+.password-field .fa-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-80%);
+    cursor: pointer;
+    color: #777;
+}
+
+.button button {
+    border-radius: 20px;
+    border: 0;
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    box-shadow: 0 0 5px aqua;
+    transition: all .2s linear;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.button button:hover {
+    box-shadow: 0 0 10px aqua;
+}
+
+.button button:active {
+    transform: scale(0.95);
+    transition: none;
+}
+
+@media (max-width: 768px) {
+    .button {
+        width: 80%;
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+::-webkit-input-placeholder {
+    user-select: none;
+}
