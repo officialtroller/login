@@ -173,6 +173,13 @@ body::before {
         height: auto;
         min-height: 300px;
     }
+
+    .inputs i {
+        position: relative;
+        background-color: transparent;
+        left: 41%;
+        bottom: 35px;
+    }
 }
 
 ::-webkit-input-placeholder {
